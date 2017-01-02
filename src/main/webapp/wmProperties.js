@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "material",
+  "activeTheme" : "graffiti",
   "dateFormat" : "",
   "defaultLanguage" : "en",
   "displayName" : "S2474",
