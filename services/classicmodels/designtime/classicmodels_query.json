@@ -1,0 +1,37 @@
+{
+  "name" : "classicmodels",
+  "description" : "Queries for classicmodels",
+  "queries" : [ {
+    "name" : "getCustomer",
+    "query" : "select * from customers  where customerNumber = :num",
+    "comment" : "same",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "num",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "103",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "classicmodelsgetCustomerrtnType",
+    "returnTypeMetadata" : {
+      "addressLine1" : "java.lang.String",
+      "addressLine2" : "java.lang.String",
+      "city" : "java.lang.String",
+      "contactFirstName" : "java.lang.String",
+      "contactLastName" : "java.lang.String",
+      "country" : "java.lang.String",
+      "creditLimit" : "java.lang.Double",
+      "customerName" : "java.lang.String",
+      "customerNumber" : "java.lang.Integer",
+      "phone" : "java.lang.String",
+      "postalCode" : "java.lang.String",
+      "salesRepEmployeeNumber" : "java.lang.Integer",
+      "state" : "java.lang.String"
+    }
+  } ]
+}

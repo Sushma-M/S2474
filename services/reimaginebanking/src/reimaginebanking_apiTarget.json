@@ -1,0 +1,108 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.reimaginebanking.basepath}",
+  "paths" : {
+    "/accounts" : {
+      "x-WM-BASE_PATH" : "/accounts",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "description" : "key",
+          "name" : "key",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-IS_LIST" : true,
+              "items" : {
+                "$ref" : "#/definitions/RootResponseROOTEntryItem"
+              },
+              "uniqueItems" : false,
+              "type" : "array"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "reimaginebanking_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.reimaginebanking.scheme}://${rest.reimaginebanking.host}${rest.reimaginebanking.basepath}/accounts"
+    }
+  },
+  "host" : "${rest.reimaginebanking.host}",
+  "schemes" : [ "${rest.reimaginebanking.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "RootResponseROOT" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/RootResponseROOTEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      },
+      "required" : [ "RootResponseROOT" ]
+    },
+    "RootResponseROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking.RootResponseROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "balance" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "_id" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "rewards" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "customer_id" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "_id", "account_number", "balance", "customer_id", "nickname", "rewards", "type" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-PROXY-USERNAME" : "${rest.reimaginebanking.proxy.username}",
+    "x-WM-API_ID" : "96414e16-294d-48d7-aca0-6ccbbad6efc3",
+    "x-WM-PROXY-PORT" : "${rest.reimaginebanking.proxy.port}",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-PROXY-HOSTNAME" : "${rest.reimaginebanking.proxy.hostname}",
+    "x-WM-PROXY-PASSWORD" : "${rest.reimaginebanking.proxy.password}",
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-PROXY-ENABLED" : "${rest.reimaginebanking.proxy.enabled}",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

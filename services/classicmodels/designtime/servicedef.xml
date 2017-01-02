@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="classicmodels" type="DataService" springFile="classicmodels.spring.xml">
+    <operation operationType="nativequery" name="getCustomer">
+        <parameter name="num" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="classicmodelsgetCustomerrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="getCustomer">
+        <parameter name="num" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="classicmodelsgetCustomerrtnType" isList="false"/>
+    </operation>
+    <operation operationType="procedure" name="getProc">
+        <parameter name="men1" typeRef="java.lang.Integer" isList="false" parameterType="IN_OUT"/>
+        <parameter name="men2" typeRef="java.lang.Integer" isList="false" parameterType="IN"/>
+        <return typeRef="classicmodelsgetProcrtnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="classicmodelsgetCustomerrtnType">
+            <element name="addressLine1" typeRef="java.lang.String"/>
+            <element name="addressLine2" typeRef="java.lang.String"/>
+            <element name="city" typeRef="java.lang.String"/>
+            <element name="contactFirstName" typeRef="java.lang.String"/>
+            <element name="contactLastName" typeRef="java.lang.String"/>
+            <element name="country" typeRef="java.lang.String"/>
+            <element name="creditLimit" typeRef="java.lang.Double"/>
+            <element name="customerName" typeRef="java.lang.String"/>
+            <element name="customerNumber" typeRef="java.lang.Integer"/>
+            <element name="phone" typeRef="java.lang.String"/>
+            <element name="postalCode" typeRef="java.lang.String"/>
+            <element name="salesRepEmployeeNumber" typeRef="java.lang.Integer"/>
+            <element name="state" typeRef="java.lang.String"/>
+        </dataobject>
+        <dataobject javaType="classicmodelsgetProcrtnType" name="classicmodelsgetProcrtnType">
+            <element name="men1" typeRef="java.lang.Integer" isList="false"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.ArticleTags">
+            <element name="articleId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="blank" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tagId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Customers">
+            <element name="addressLine1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addressLine2" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="contactFirstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="contactLastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" allowNull="true"/>
+            <element name="creditLimit" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="customerName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="customerNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employees" typeRef="com.s2474.classicmodels.Employees" allowNull="true"/>
+            <element name="orderses" typeRef="com.s2474.classicmodels.Orders" isList="true" allowNull="true"/>
+            <element name="paymentses" typeRef="com.s2474.classicmodels.Payments" isList="true" allowNull="true"/>
+            <element name="phone" typeRef="java.lang.String" allowNull="true"/>
+            <element name="postalCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="salesRepEmployeeNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Employees">
+            <element name="customerses" typeRef="com.s2474.classicmodels.Customers" isList="true" allowNull="true"/>
+            <element name="email" typeRef="java.lang.String" allowNull="true"/>
+            <element name="employeeNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employeesByReportsTo" typeRef="com.s2474.classicmodels.Employees" allowNull="true"/>
+            <element name="employeesesForReportsTo" typeRef="com.s2474.classicmodels.Employees" isList="true" allowNull="true"/>
+            <element name="extension" typeRef="java.lang.String" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="officeCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="offices" typeRef="com.s2474.classicmodels.Offices" allowNull="true"/>
+            <element name="reportsTo" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Mytable">
+            <element name="columnA" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="columnB" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="columnC" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Mytable2">
+            <element name="col1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="col2" typeRef="java.lang.String" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Offices">
+            <element name="addressLine1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addressLine2" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" allowNull="true"/>
+            <element name="employeeses" typeRef="com.s2474.classicmodels.Employees" isList="true" allowNull="true"/>
+            <element name="officeCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="phone" typeRef="java.lang.String" allowNull="true"/>
+            <element name="postalCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="territory" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Orderdetails">
+            <element name="orderLineNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orderNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orders" typeRef="com.s2474.classicmodels.Orders" allowNull="true"/>
+            <element name="priceEach" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="products" typeRef="com.s2474.classicmodels.Products" allowNull="true"/>
+            <element name="quantityOrdered" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Orders">
+            <element name="comments" typeRef="java.lang.String" allowNull="true"/>
+            <element name="customerNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="customers" typeRef="com.s2474.classicmodels.Customers" allowNull="true"/>
+            <element name="orderDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="orderNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orderdetailses" typeRef="com.s2474.classicmodels.Orderdetails" isList="true" allowNull="true"/>
+            <element name="requiredDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="shippedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Payments">
+            <element name="amount" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="checkNumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="customerNumber" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="customers" typeRef="com.s2474.classicmodels.Customers" allowNull="true"/>
+            <element name="paymentDate" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Productlines">
+            <element name="htmlDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="image" typeRef="java.lang.Byte" isList="true" allowNull="true"/>
+            <element name="productLine" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productses" typeRef="com.s2474.classicmodels.Products" isList="true" allowNull="true"/>
+            <element name="textDescriptio" typeRef="java.lang.String" allowNull="true"/>
+            <element name="textDescription" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.s2474.classicmodels.Products">
+            <element name="buyPrice" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="msrp" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orderdetailses" typeRef="com.s2474.classicmodels.Orderdetails" isList="true" allowNull="true"/>
+            <element name="productCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productLine" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productScale" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productVendor" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productlines" typeRef="com.s2474.classicmodels.Productlines" allowNull="true"/>
+            <element name="quantityInStock" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeValue" allowNull="true"/>
+            <element name="filterCondition" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomProcedure">
+            <element name="procedureParams" typeRef="com.wavemaker.runtime.data.model.CustomProcedureParam" isList="true" allowNull="true"/>
+            <element name="procedureStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomQuery">
+            <element name="nativeSql" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="queryParams" typeRef="com.wavemaker.runtime.data.model.CustomQueryParam" isList="true" allowNull="true"/>
+            <element name="queryStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

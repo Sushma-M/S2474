@@ -1,0 +1,40 @@
+{
+  "name" : "classicmodels",
+  "description" : "Procedure for classicmodels",
+  "procedures" : [ {
+    "name" : "getProc",
+    "procedure" : "call set_counter(:men1,:men2)",
+    "comment" : "sample",
+    "description" : null,
+    "outputType" : null,
+    "returnsSingleResult" : false,
+    "procedureParams" : [ {
+      "paramName" : "men1",
+      "procedureParamType" : "IN_OUT",
+      "valueType" : "java.lang.Integer",
+      "testValue" : "1323",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "men2",
+      "procedureParamType" : "IN",
+      "valueType" : "java.lang.Integer",
+      "testValue" : "3123",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "returnTypeMetadata" : [ {
+      "element" : [ {
+        "name" : "men1",
+        "subType" : null,
+        "typeRef" : "java.lang.Integer",
+        "isList" : false,
+        "allowNull" : null
+      } ],
+      "javaType" : "classicmodelsgetProcrtnType",
+      "name" : "classicmodelsgetProcrtnType"
+    } ]
+  } ]
+}

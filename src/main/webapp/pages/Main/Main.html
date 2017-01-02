@@ -1,0 +1,111 @@
+<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
+    <wm-content name="content">
+        <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px">
+            <wm-grid title="" dataset="bind:Variables.GoogleapisInvoke.dataSet" navigation="Basic" name="grid1">
+                <wm-grid-column binding="status" caption="Status" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.bounds.southwest.lng" caption="Route.bounds.southwest Lng" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.bounds.southwest.lat" caption="Route.bounds.southwest Lat" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.bounds.northeast.lng" caption="Route.bounds.northeast Lng" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.bounds.northeast.lat" caption="Route.bounds.northeast Lat" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.summary" caption="Route Summary" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.leg.distance.text" caption="Route.leg.distance Text" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.leg.distance.value" caption="Route.leg.distance Value" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.leg.duration.text" caption="Route.leg.duration Text" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="route.leg.duration.value" caption="Route.leg.duration Value" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-grid title="" dataset="bind:Variables.ReimaginebankingInvoke.dataSet" navigation="Basic" name="grid2">
+                <wm-grid-column binding="balance" caption="Balance" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="account_number" caption="Account Number" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="_id" caption="Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="nickname" caption="Nickname" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="rewards" caption="Rewards" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="type" caption="Type" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="customer_id" caption="Customer Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-chart type="Line" title="Line Chart" height="250px" iconclass="wi wi-line-chart" name="chart1" dataset="bind:Variables.webSocketVariable1.dataSet" xaxisdatakey="time" yaxisdatakey="value"></wm-chart>
+            <wm-grid title="" dataset="bind:Variables.CountryInfoServiceFullCountryInfoAllCountries1.dataSet.fullCountryInfoAllCountriesResult.tCountryInfo" navigation="Basic" name="grid4">
+                <wm-grid-column binding="sCapitalCity" caption="S Capital City" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="sPhoneCode" caption="S Phone Code" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="sContinentCode" caption="S Continent Code" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="sCurrencyISOCode" caption="S Currency Iso Code" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="sName" caption="S Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="sCountryFlag" widget-type="image" caption="S Country Flag" pcdisplay="true" mobiledisplay="true" readonly="true">
+                    <wm-picture picturesource="{{row.getProperty('sCountryFlag')}}" hint="{{row.getProperty('sCountryFlag')}}" class="" data-ng-class=""></wm-picture>
+                </wm-grid-column>
+            </wm-grid>
+            <wm-grid title="" dataset="bind:Variables.MyJavaServiceTestJavaSer1.dataSet" navigation="Basic" name="grid6"></wm-grid>
+            <wm-grid title="" dataset="bind:Variables.FeedServiceGetFeed.dataSet" navigation="Basic" name="grid5">
+                <wm-grid-column binding="author" caption="Author" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="title" caption="Title" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="description" caption="Description" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="feedType" caption="Feed Type" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="link" caption="Link" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="encoding" caption="Encoding" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="entries[0].author" caption="Entries[0] Author" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="entries[0].title" caption="Entries[0] Title" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="entries[0].description" caption="Entries[0] Description" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="entries[0].updatedDate" caption="Entries[0] Updated Date" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-grid title="" dataset="bind:Variables.ClassicmodelsExecuteGetProc.dataSet" navigation="Basic" name="grid7">
+                <wm-grid-column binding="men1" caption="Men1" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-grid title="" dataset="bind:Variables.ClassicmodelsExecuteGetCustomer.dataSet" navigation="Basic" name="grid6_1">
+                <wm-grid-column binding="customerName" caption="Customer Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="phone" caption="Phone" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="contactLastName" caption="Contact Last Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="salesRepEmployeeNumber" caption="Sales Rep Employee Number" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="contactFirstName" caption="Contact First Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="customerNumber" caption="Customer Number" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="state" caption="State" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="creditLimit" caption="Credit Limit" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="addressLine2" caption="Address Line2" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="addressLine1" caption="Address Line1" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-livegrid formlayout="dialog" name="livegrid1">
+                <wm-grid gridfirstrowselect="true" editmode="dialog" title="Productlines List" dataset="bind:Variables.ClassicmodelsProductlinesData.dataSet" navigation="Basic" name="grid8">
+                    <wm-grid-column binding="productLine" caption="Product Line" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" primary-key="true"></wm-grid-column>
+                    <wm-grid-column binding="textDescriptio" caption="Text Descriptio" generator="assigned" pcdisplay="true" mobiledisplay="true" type="clob"></wm-grid-column>
+                    <wm-grid-column binding="htmlDescription" caption="Html Description" generator="assigned" pcdisplay="true" mobiledisplay="true" type="clob"></wm-grid-column>
+                    <wm-grid-column binding="image" widget-type="image" caption="Image" generator="assigned" pcdisplay="true" mobiledisplay="true" type="blob"><img ng-if="columnValue != null" width="48px" class="" data-ng-src="{{contentBaseUrl + row[primaryKey] + '/content/'+ colDef.field}}">
+                    </wm-grid-column>
+                    <wm-grid-column binding="textDescription" caption="Text Description" generator="assigned" pcdisplay="true" mobiledisplay="true" type="clob"></wm-grid-column>
+                    <wm-grid-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-grid-action>
+                    <wm-grid-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-grid-row-action>
+                    <wm-grid-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-grid-row-action>
+                </wm-grid>
+                <wm-liveform novalidate="false" errormessage="" title="Productlines Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.ClassicmodelsProductlinesData.dataSet" captionalign="left" captionposition="top" name="liveform1">
+                    <wm-layoutgrid columns="3" name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                                <wm-form-field name="productLine" displayname="Product Line" required="true" show="true" generator="assigned" primary-key="true" key="productLine" type="string" is-related="false" maxchars="50" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                                <wm-form-field name="textDescriptio" displayname="Text Descriptio" required="false" show="true" generator="assigned" primary-key="false" key="textDescriptio" type="clob" is-related="false" maxchars="4000" pc-display="true"
+                                mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                <wm-form-field name="htmlDescription" displayname="Html Description" required="false" show="true" generator="assigned" primary-key="false" key="htmlDescription" type="clob" is-related="false" maxchars="16777215" pc-display="true"
+                                mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                <wm-form-field name="image" displayname="Image" required="false" show="true" generator="assigned" primary-key="false" key="image" type="blob" is-related="false" maxchars="16777215" pc-display="true" mobile-display="true" widget="upload"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                <wm-form-field name="textDescription" displayname="Text Description" required="false" show="true" generator="assigned" primary-key="false" key="textDescription" type="clob" is-related="false" maxchars="4000" pc-display="true"
+                                mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>
