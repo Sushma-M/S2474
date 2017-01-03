@@ -105,6 +105,59 @@
                     <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
                 </wm-liveform>
             </wm-livegrid>
+            <wm-livefilter title="Filter Employees" dataset="bind:Variables.ClassicmodelsEmployeesData.dataSet" captionalign="left" captionposition="top" name="livefilter1">
+                <wm-layoutgrid columns="3" name="layoutgrid2">
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                            <wm-filter-field name="offices" field="offices" displayname="Offices" widget="text" lookup-type="Offices" lookup-field="officeCode" is-related="true" related-entity-name="Offices" is-range="false" type="string" is-primary-key="false"
+                            generator="assigned" show="true" inputtype="text" key="offices" placeholder="Enter value" matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                            <wm-filter-field name="employeesByReportsTo" field="employeesByReportsTo" displayname="Employees By Reports To" widget="number" lookup-type="Employees" lookup-field="employeeNumber" is-related="true" related-entity-name="Employees"
+                            is-range="false" type="integer" is-primary-key="false" generator="assigned" show="true" inputtype="number" key="employeesByReportsTo" placeholder="Enter value"></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                            <wm-filter-field name="employeeNumber" field="employeeNumber" displayname="Employee Number" widget="number" is-range="false" type="integer" is-primary-key="true" generator="assigned" show="true" inputtype="number" key="employeeNumber"
+                            placeholder="Enter value"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                            <wm-filter-field name="lastName" field="lastName" displayname="Last Name" widget="text" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" inputtype="text" key="lastName" placeholder="Enter value"
+                            matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                            <wm-filter-field name="firstName" field="firstName" displayname="First Name" widget="text" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" inputtype="text" key="firstName" placeholder="Enter value"
+                            matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn1" columnwidth="4">
+                            <wm-filter-field name="extension" display-name="Extension" field="extension" related-field="Extension" widget="text" is-range="false" show="true" type="string" is-primary-key="false" generator="assigned" matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn name="gridcolumn2" columnwidth="4">
+                            <wm-filter-field name="email" display-name="Email" field="email" related-field="Email" widget="text" is-range="false" show="true" type="string" is-primary-key="false" generator="assigned" matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn3" columnwidth="4">
+                            <wm-filter-field name="jobTitle" display-name="Job Title" field="jobTitle" related-field="Job Title" widget="text" is-range="false" show="true" type="string" is-primary-key="false" generator="assigned" matchmode="start"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-filter-action key="filter" display-name="Filter" show="true" class="btn-primary" iconclass="wi wi-filter-list" title="Filter" action="filter()" disabled="false" type="button"></wm-filter-action>
+                <wm-filter-action key="clear" display-name="Clear" show="true" class="btn-secondary" iconclass="wi wi-cancel" title="Clear" action="clearFilter()" disabled="false" type="button"></wm-filter-action>
+            </wm-livefilter>
+            <wm-grid title="" dataset="bind:Widgets.livefilter1.result" navigation="Basic" name="grid9">
+                <wm-grid-column binding="employeeNumber" caption="Employee Number" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="lastName" caption="Last Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="firstName" caption="First Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="extension" caption="Extension" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="email" caption="Email" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="jobTitle" caption="Job Title" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="offices.officeCode" caption="Office Code" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" primary-key="true" related-entity-name="Offices" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="offices.city" caption="Offices City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Offices" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="offices.phone" caption="Offices Phone" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Offices" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="offices.addressLine1" caption="Address Line1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Offices" readonly="true"></wm-grid-column>
+            </wm-grid>
         </wm-page-content>
     </wm-content>
     <wm-footer name="footer" content="footer"></wm-footer>
