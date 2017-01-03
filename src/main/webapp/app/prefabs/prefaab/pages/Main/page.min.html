@@ -1,0 +1,75 @@
+<style id="Main.css">
+</style>
+<script id="Main.js">
+Application.$controller("PrefaabController", ["$scope", function ($scope) {
+	"use strict";
+
+	/* 
+	 * This function will be invoked when any of this prefab's property is changed
+	 * @key: property name
+	 * @newVal: new value of the property
+	 * @oldVal: old value of the property
+	 */
+	function propertyChangeHandler(key, newVal, oldVal) {
+		/*
+		switch (key) {
+			case "prop1":
+				// do something with newVal for property 'prop1'
+				break;
+			case "prop2":
+				// do something with newVal for property 'prop2'
+				break;
+		}
+		*/
+	}
+	/* register the property change handler */
+	$scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+	$scope.onInitPrefab = function() {
+		// this method will be triggered post initialization of the prefab.
+	}
+}]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "webSocketVariable1" : {
+    "_id" : "wm-webSocketVariable1-wm.WebSocketVariable-1483354441488",
+    "name" : "webSocketVariable1",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ {
+      "target" : "RequestBody",
+      "value" : "bind:\"test\"",
+      "type" : "websocket.RootRequest"
+    } ],
+    "service" : "websocket",
+    "operationId" : "websocket_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "websocket.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : true,
+    "dataUpdateStrategy" : "refresh",
+    "dataLimit" : 20
+  }
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page data-ng-controller="PrefaabController" name="page1">
+    <wm-content name="content1">
+        <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="Variables.webSocketVariable1.send()"></wm-button>
+    </wm-content>
+</wm-page>
+</script>

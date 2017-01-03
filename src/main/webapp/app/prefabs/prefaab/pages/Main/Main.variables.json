@@ -1,0 +1,34 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "webSocketVariable1" : {
+    "_id" : "wm-webSocketVariable1-wm.WebSocketVariable-1483354441488",
+    "name" : "webSocketVariable1",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ {
+      "target" : "RequestBody",
+      "value" : "bind:\"test\"",
+      "type" : "websocket.RootRequest"
+    } ],
+    "service" : "websocket",
+    "operationId" : "websocket_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "websocket.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : true,
+    "dataUpdateStrategy" : "refresh",
+    "dataLimit" : 20
+  }
+}

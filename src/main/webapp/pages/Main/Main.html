@@ -105,6 +105,7 @@
                     <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
                 </wm-liveform>
             </wm-livegrid>
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="prefaab1.prefabSocket"></wm-button>
             <wm-livefilter title="Filter Employees" dataset="bind:Variables.ClassicmodelsEmployeesData.dataSet" captionalign="left" captionposition="top" name="livefilter1">
                 <wm-layoutgrid columns="3" name="layoutgrid2">
                     <wm-gridrow name="gridrow3">
@@ -158,6 +159,7 @@
                 <wm-grid-column binding="offices.phone" caption="Offices Phone" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Offices" readonly="true"></wm-grid-column>
                 <wm-grid-column binding="offices.addressLine1" caption="Address Line1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Offices" readonly="true"></wm-grid-column>
             </wm-grid>
+            <wm-prefab prefabname="prefaab" name="prefaab1"></wm-prefab>
         </wm-page-content>
     </wm-content>
     <wm-footer name="footer" content="footer"></wm-footer>

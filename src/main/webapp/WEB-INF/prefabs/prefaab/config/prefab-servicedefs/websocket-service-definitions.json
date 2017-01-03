@@ -1,0 +1,24 @@
+{
+  "websocket_WebSocketServiceVirtualController-invoke" : {
+    "id" : "websocket_WebSocketServiceVirtualController-invoke",
+    "service" : "websocket",
+    "controller" : "WebSocketServiceVirtualController",
+    "operationType" : null,
+    "type" : null,
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/websocket/invoke/",
+      "directPath" : "wss://echo.websocket.org/",
+      "httpMethod" : "get",
+      "parameters" : [ ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : false,
+        "mobile" : true
+      }
+    }
+  }
+}
